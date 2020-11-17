@@ -11,7 +11,7 @@ func TestNewAdapter(t *testing.T) {
 	mp3player.playMp3()
 	mp4player.playMp4()
 	fmt.Println("-------adapter---------")
-	adapter := NewAdapter(mp3player,mp4player)
+	adapter := NewAdapter(mp3player, mp4player)
 	adapter.playMp3()
 	adapter.playMp4()
 }
