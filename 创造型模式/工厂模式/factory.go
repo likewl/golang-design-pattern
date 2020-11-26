@@ -6,6 +6,9 @@ import "fmt"
 应用实例： 1、您需要一辆汽车，可以直接从工厂里面提货，而不用去管这辆汽车是怎么做出来的，以及这个汽车里面的具体实现。
 			2、Hibernate 换数据库只需换方言和驱动就可以。
 
+关键代码：让其子类实现工厂接口，返回的也是一个抽象的产品。
+		创建过程在其子类执行。
+
 优点： 1、一个调用者想创建一个对象，只要知道其名称就可以了。
 		2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。 3、屏蔽产品的具体实现，调用者只关心产品的接口。
 
@@ -26,8 +29,9 @@ type Shape interface {
 }
 
 //2.接口实现类
-type square struct {}
-type circle struct {}
+type square struct{}
+type circle struct{}
+
 func (s square) draw() {
 	fmt.Println("draw a square")
 }
@@ -36,13 +40,12 @@ func (c circle) draw() {
 }
 
 //3.创建一个工厂，生成基于给定信息的实体类的对象。
-func ShapeFactory (s string) Shape {
-	if s=="square"{
+func ShapeFactory(s string) Shape {
+	if s == "square" {
 		return &square{}
 	}
-	if s=="circle"{
+	if s == "circle" {
 		return &circle{}
 	}
 	return nil
 }
-
