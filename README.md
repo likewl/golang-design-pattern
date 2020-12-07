@@ -1,7 +1,7 @@
 # golang-design-pattern
 go语言设计模式版本
 
-这是我把在学习java版本的时候用go写的
+这是我在学习java版本的时候用go写的
 
 java版设计模式参考地址：https://www.runoob.com/design-pattern
 
